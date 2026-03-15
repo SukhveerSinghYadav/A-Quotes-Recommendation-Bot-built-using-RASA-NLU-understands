@@ -204,7 +204,7 @@ input.value=""
 
 document.getElementById("typing").style.display="block"
 
-let response=await fetch("http://localhost:5005/webhooks/rest/webhook",{
+let response=await fetch("https://nonflagrantly-unsolved-inger.ngrok-free.dev/webhooks/rest/webhook",{
 
 method:"POST",
 
@@ -223,8 +223,9 @@ let data=await response.json()
 
 document.getElementById("typing").style.display="none"
 
+if(data.length>0){
 typeEffect(data[0].text)
-
+}
 }
 
 function startVoice(){
